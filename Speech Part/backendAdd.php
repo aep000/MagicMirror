@@ -16,8 +16,8 @@ $text = strtolower($text);
 if (strpos($text, "mirror mirror") === 0){
   // Check connection
 
-  $sql = "INSERT INTO speech (`text`) VALUES (".$text.")";
-
+  $sql = "INSERT INTO speech VALUES (".$text.")";
+  echo($sql);
   if (mysqli_query($conn, $sql)) {
     echo($text);
   }

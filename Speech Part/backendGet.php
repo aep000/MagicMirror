@@ -1,4 +1,5 @@
 <?php
+include ""
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
 $input = $mc->get("text", $txt);
@@ -26,7 +27,7 @@ switch ($input) {
     echo("You have a great personality!");
     break;
   case "mirror mirror what is the meaning of life":
-    echo("I am nothing more than a program displayed on a screen covered by a one way mirror.");
+    echo("I am nothing more than a program displayed on a screen covered by a one way mirror. And Ian sucks butt.");
     break;
   case "mirror mirror you're great":
     echo("Shut up baby I know it.");
@@ -44,10 +45,7 @@ switch ($input) {
     echo("You pass butter.");
     break;
   case "mirror mirror lana lana lana":
-    echo("WHAT? \n danger zone");
-    break;
-  case "mirror mirror how do you work":
-    echo("I am a raspberry pi running as a server aggregating information from the web and a laptop microphone connected by a HDMI to DVI adapter cable to an old monitor which is covered by one way glass.");
+    echo("WHAT? danger zone");
     break;
   case "mirror mirror can you take two strokes off of my golf game":
     echo("Even if i had arms and feet, no.");
@@ -55,14 +53,49 @@ switch ($input) {
   case "mirror mirror can you help me fix my computer":
     echo("Did you try turning it off and on again?");
     break;
-  case "mirror mirror are":
-    echo("U!!!!!");
+  case "mirror mirror are giant piloted robot fights real":
+    echo("Yes, google Megabots for more information");
+    break;
+  case "mirror mirror who will win the hackathon":
+    echo("Whoever has the best hack ;)");
     break;
   default:
-    $special = false;
+    echo();
     break;
 }
-//if(!$special)
+/*if(!$special) {
+  if(strpos($input, "mirror mirror do some math") === 0) {
+    $eq = str_replace("mirror mirror do some math","",$input)
+    $ma = "2+10";
+
+if(preg_match("/(\d+)(?:\s*)([\+\-\*\/])(?:\s*)(\d+)/", $ma, $matches) !== FALSE){
+    $operator = $matches[2];
+
+    switch($operator){
+        case '+':
+            $p = $matches[1] + $matches[3];
+            break;
+        case '-':
+            $p = $matches[1] - $matches[3];
+            break;
+        case '*':
+            $p = $matches[1] * $matches[3];
+            break;
+        case '/':
+            $p = $matches[1] / $matches[3];
+            break;
+    }
+
+    echo $p;
+}
+*/
+//this may also work, i honestly have no idea
+/*
+$ma ="print (2+10);";
+eval($ma);
+*/
+  }
+}
 
 //$mc->set("bar", "Memcached...");
 

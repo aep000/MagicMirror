@@ -3,7 +3,7 @@ $text = $_POST['text'];
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
 $text = strtolower($text);
-if (strpos($text, "mirror mirror") === 0)
+if (strpos($text, "mirror mirror") === 0){
 $mc->set("text", $txt);
 //$mc->set("bar", "Memcached...");
 
@@ -13,5 +13,9 @@ $mc->set("text", $txt);
 );
 */
 //var_dump($arr);
-echo("Good")
+echo($text);
+}
+else{
+  echo("Bad Text");
+}
 ?>

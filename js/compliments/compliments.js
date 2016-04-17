@@ -20,6 +20,7 @@ compliments.updateCompliment = function () {
         text: "NOTHING"
     }
     ,function(data, status){
+				console.log(data);
         if(data == compliments.currentCompliment || compliments.lastCompliment == data){
 					compliments.currentCompliment = " ";
 					compliments.lastCompliment = data;

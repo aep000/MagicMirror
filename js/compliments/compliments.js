@@ -8,7 +8,7 @@ var compliments = {
 		'evening': config.compliments.evening
 	},
 	updateInterval: config.compliments.interval || 300,
-	fadeInterval: config.compliments.fadeInterval || 4000,
+	fadeInterval: config.compliments.fadeInterval || 400,
 	intervalId: null
 };
 

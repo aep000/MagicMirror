@@ -17,7 +17,7 @@ var config = {
         }
     },
     compliments: {
-        interval: 1000,
+        interval: 500,
         fadeInterval: 5000,
         morning: [
             'Good morning, handsome!',

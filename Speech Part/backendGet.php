@@ -1,8 +1,24 @@
 <?php
-$mc = new Memcached();
-$mc->addServer("localhost", 11211);
-echo("Hello");
-$input = apc_fetch("speechData");
+$servername = "localhost";
+$username = "root";
+$password = "magicmirror";
+$dbname = "magicmirror";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$query = "SELECT * FROM  `speech` WHERE  `ID` = ( SELECT MAX(  `ID` ) FROM  `speech` )";
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        $input = $row['text'];
+    }
+} else {
+    echo "0 results";
+}
 $special = true;
 var_dump($input);
 switch ($input) {

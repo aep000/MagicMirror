@@ -13,7 +13,9 @@ apc_store("speechData", $txt);
 );
 */
 //var_dump($arr);
-echo($text);
+$input = apc_fetch("speechData");
+$special = true;
+var_dump($input);
 }
 else{
   echo("Bad Text");

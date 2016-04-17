@@ -1,7 +1,7 @@
 <?php
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
-$input = $mc->get("text", $txt);
+$input = $mc->get("text");
 $special = true;
 switch ($input) {
   case 'mirror mirror on the wall who\'s the fairest of them all':

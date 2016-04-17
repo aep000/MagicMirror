@@ -20,7 +20,6 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     echo "0 results";
 }
->>>>>>> origin/master
 $special = true;
 switch ($input) {
   case "mirror mirror on the wall who's the fairest of them all":

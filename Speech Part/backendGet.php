@@ -25,7 +25,7 @@ switch ($input) {
   case "mirror mirror on the wall who's the fairest of them all":
     echo("Snow White.");
     break;
-  case 'mirror mirror how much would could a woodchuck chuck if a woodchuck could chuck wood':
+  case 'mirror mirror how much wood could a woodchuck chuck if a woodchuck could chuck wood':
     echo("On a good day, with the wind to its back, 711 pounds.");
     break;
   case 'mirror mirror have you ever had a broken heart':
@@ -34,7 +34,7 @@ switch ($input) {
   case "mirror mirror if a tree falls in a forest and no one is around to hear it, does it make a sound":
     echo("Can we assume the unobserved world functions the same as the observed world?");
     break;
-  case "mirror mirror are":
+  case "mirror mirror ar":
     echo("U!!!!!");
     break;
   case "mirror mirror what is war good for":

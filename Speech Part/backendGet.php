@@ -1,6 +1,7 @@
 <?php
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
+echo("Hello");
 $input = $mc->get("text");
 $special = true;
 echo($input);

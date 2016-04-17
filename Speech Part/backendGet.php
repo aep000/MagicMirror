@@ -4,7 +4,7 @@ $mc->addServer("localhost", 11211);
 echo("Hello");
 $input = apc_fetch("speechData");
 $special = true;
-echo($input);
+var_dump($input);
 switch ($input) {
   case "mirror mirror on the wall who's the fairest of them all":
     echo("Snow White.");

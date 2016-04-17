@@ -74,10 +74,9 @@ switch ($input) {
     echo("Yes, google Megabots for more information");
     break;
   case "mirror mirror who will win the hackathon":
-    echo("Whoever has the best hack ;)");
+    echo("Whoever has the best hack 😉");
     break;
   default:
-    echo();
     break;
 }
 /*if(!$special) {

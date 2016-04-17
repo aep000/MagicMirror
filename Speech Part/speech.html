@@ -17,8 +17,9 @@ recognition.onresult = function(event) {
   }
 }
 recognition.onend = function(){
-  recognition.start();
+  //recognition.start();
 }
+recognition.start()
 console.log("Test");
 </script>
 <button  onclick="recognition.start()">Click Me </button>

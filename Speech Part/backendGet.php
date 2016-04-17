@@ -110,8 +110,6 @@ if(preg_match("/(\d+)(?:\s*)([\+\-\*\/])(?:\s*)(\d+)/", $ma, $matches) !== FALSE
 $ma ="print (2+10);";
 eval($ma);
 */
-  }
-}
 
 //$mc->set("bar", "Memcached...");
 

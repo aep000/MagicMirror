@@ -1,5 +1,5 @@
 <?php
-$text = $_POST['Text'];
+$text = $_POST['text'];
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
 $text = strtolower($text);

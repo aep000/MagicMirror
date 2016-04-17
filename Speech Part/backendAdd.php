@@ -17,7 +17,6 @@ if (strpos($text, "mirror mirror") === 0){
   // Check connection
 
   $sql = 'INSERT INTO speech (`text`) VALUES ("'.$text.'")';
-  echo($sql);
   if (mysqli_query($conn, $sql)) {
     echo($text);
   }

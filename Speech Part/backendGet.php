@@ -65,7 +65,7 @@ switch ($input) {
     echo("WHAT? danger zone");
     break;
   case "mirror mirror can you take two strokes off of my golf game":
-    echo("Even if i had arms and feet, no.");
+    echo("Even if I had arms and feet, no.");
     break;
   case "mirror mirror can you help me fix my computer":
     echo("Did you try turning it off and on again?");
@@ -76,6 +76,19 @@ switch ($input) {
   case "mirror mirror who will win the hackathon":
     echo("Whoever has the best hack 😉");
     break;
+  case "mirror mirror what is your purpose":
+    echo("To show everyone how great they look");
+    break;
+    case "mirror mirror if you could tell the judges one thing what would it be":
+      echo("I would tell them how hard this team worked on creating me");
+      break;
+      case "mirror mirror what technologies were used to create you":
+        echo("PHP, Javscript, HTML, and a Raspberry Pi");
+        break;
+        case "mirror mirror what is your favorite sports team?":
+          echo("The Scarlet Knights");
+          break;
+
   default:
     break;
 }

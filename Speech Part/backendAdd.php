@@ -1,10 +1,29 @@
 <?php
 $text = $_POST['text'];
-$mc = new Memcached();
-$mc->addServer("localhost", 11211);
+//$mc = new Memcached();
+//$mc->addServer("localhost", 11211);
+$servername = "localhost";
+$username = "root";
+$password = "magicmirror";
+$dbname = "magicmirror";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 $text = strtolower($text);
-if (strpos($text, "mirror mirror") === 0)
-$mc->set("text", $txt);
+if (strpos($text, "mirror mirror") === 0){
+  // Check connection
+
+  $sql = 'INSERT INTO speech (`text`) VALUES ("'.$text.'")';
+  echo($sql);
+  if (mysqli_query($conn, $sql)) {
+    echo($text);
+  }
+  else{
+    echo("Sql error");
+  }
 //$mc->set("bar", "Memcached...");
 
 /*$arr = array(
@@ -13,5 +32,10 @@ $mc->set("text", $txt);
 );
 */
 //var_dump($arr);
-echo("Good")
+//$input = apc_fetch("speechData");
+//$special = true;
+}
+else{
+  echo("Bad Text");
+}
 ?>

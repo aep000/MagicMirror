@@ -10,9 +10,8 @@ recognition.onresult = function(event) {
   }
 }
 recognition.onend = function(){
-  recognition.start();
+  //recognition.start();
 }
-recognition.start();
 
 </script>
-<button  onclick="">Click Me </button>
+<button  onclick="recognition.start();">Click Me </button>

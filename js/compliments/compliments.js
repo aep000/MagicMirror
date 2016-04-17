@@ -7,7 +7,7 @@ var compliments = {
 		'afternoon': config.compliments.afternoon,
 		'evening': config.compliments.evening
 	},
-	updateInterval: config.compliments.interval || 30000,
+	updateInterval: config.compliments.interval || 300,
 	fadeInterval: config.compliments.fadeInterval || 4000,
 	intervalId: null
 };

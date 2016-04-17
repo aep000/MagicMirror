@@ -4,7 +4,7 @@ $mc->addServer("localhost", 11211);
 $input = $mc->get("text");
 $special = true;
 switch ($input) {
-  case 'mirror mirror on the wall who\'s the fairest of them all':
+  case "mirror mirror on the wall who's the fairest of them all":
     echo("Snow White.");
     break;
   case 'mirror mirror how much would could a woodchuck chuck if a woodchuck could chuck wood':

@@ -4,7 +4,7 @@ $mc = new Memcached();
 $mc->addServer("localhost", 11211);
 $text = strtolower($text);
 if (strpos($text, "mirror mirror") === 0){
-$mc->set("text", $txt);
+$mc->set("speechData", $txt);
 //$mc->set("bar", "Memcached...");
 
 /*$arr = array(

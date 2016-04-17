@@ -1,10 +1,10 @@
 <?php
 $text = $_POST['text'];
-$mc = new Memcached();
-$mc->addServer("localhost", 11211);
+//$mc = new Memcached();
+//$mc->addServer("localhost", 11211);
 $text = strtolower($text);
 if (strpos($text, "mirror mirror") === 0){
-$mc->set("speechData", $txt);
+apc_store("speechData", $txt);
 //$mc->set("bar", "Memcached...");
 
 /*$arr = array(

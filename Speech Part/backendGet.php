@@ -2,7 +2,7 @@
 $mc = new Memcached();
 $mc->addServer("localhost", 11211);
 echo("Hello");
-$input = $mc->get("speechData");
+$input = apc_fetch("speechData");
 $special = true;
 echo($input);
 switch ($input) {

@@ -10,7 +10,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 $query = "SELECT * FROM  `speech` WHERE  `ID` = ( SELECT MAX(  `ID` ) FROM  `speech` )";
-var_dump($query);
 $result = mysqli_query($conn, $query);
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -21,7 +20,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "0 results";
 }
 $special = true;
-var_dump($input);
 switch ($input) {
   case "mirror mirror on the wall who's the fairest of them all":
     echo("Snow White.");

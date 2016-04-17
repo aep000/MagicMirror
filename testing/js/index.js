@@ -1,4 +1,5 @@
 var recognition = new webkitSpeechRecognition();
+recognition.lang = 'en-EN';
 recognition.continuous = false;
 recognition.interimResults = true;
 recognition.onresult = function(event) {

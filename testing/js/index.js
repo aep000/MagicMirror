@@ -11,8 +11,9 @@ recognition.onresult = function(event) {
     ,function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
     });
-  }*/
+  */
   console.log(event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0);
+}
 }
 recognition.onend = function(){
   recognition.start();

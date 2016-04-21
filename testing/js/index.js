@@ -3,7 +3,7 @@ recognition.lang = 'en-EN';
 recognition.continuous = false;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
-  if(event.results[0].isFinal==1){
+  if(event.results[0].isFinal==1 && event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0){
   console.log(event.results[0][0].transcript)
   /*$.post("http://172.31.168.171/MagicMirror/Speech Part/backendAdd.php",{
         text: event.results[0][0].transcript
@@ -12,7 +12,6 @@ recognition.onresult = function(event) {
         console.log("Data: " + data + "\nStatus: " + status);
     });
   */
-  console.log(event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0);
 }
 }
 recognition.onend = function(){

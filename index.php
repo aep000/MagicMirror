@@ -36,6 +36,7 @@
 <script src="js/time/time.js"></script>
 <script src="js/news/news.js"></script>
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
+<script src="speechRecognition/js/index.js"></script>
 <!-- <script src="js/socket.io.min.js"></script> -->
 <?php  include(dirname(__FILE__).'/controllers/modules.php');?>
 </body>

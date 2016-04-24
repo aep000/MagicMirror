@@ -65,7 +65,7 @@ recognition.onresult = function(event) {
 				search : event.results[0][0].transcript.slice(13)
 			},
 			success: function(data, status, xhr) {
-				$('.compliment').html((data, 400);
+				$('.compliment').html(data, 400);
 				console.log(data) //TODO check response type, delegate to functions
 			},
 			error: function(jqXHR, status, error) {

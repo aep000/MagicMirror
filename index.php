@@ -55,9 +55,10 @@ function speak(text){
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
-    'mirror mirror on the wall whose the fairest of them all': function() {
+    'hello': function() {
+			console.log("Hello");
 			$('.compliment').updateWithText("Snow White", 400);
-			speak("Snow White")
+			speak("Snow White");
     }
   };
 

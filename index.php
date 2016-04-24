@@ -76,9 +76,10 @@ function show(data){
 function youtube(data){
 	if (checkFront(data,"play")){
 		data = data.slice(5);
-		console.log(data);
 		url = "youtube/index.php";
-		show(getData(url,data));
+		retval = getData(url,data)
+		console.log(data);
+		show(retval);
 	}
 }
 function maps(data){

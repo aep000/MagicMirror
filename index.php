@@ -78,7 +78,7 @@ function youtube(data){
 		data = data.slice(5);
 		url = "youtube/index.php";
 		retval = getData(url,data)
-		console.log(data);
+		console.log(retval);
 		show(retval);
 	}
 }

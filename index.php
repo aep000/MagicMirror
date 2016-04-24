@@ -56,7 +56,7 @@ function checkFront(inp, val){
 function getData(url, data){
 	$.ajax({
 		type: "GET",
-		url: "youtube/index.php",
+		url: url,
 		data: {
 			search : data
 		},

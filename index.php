@@ -50,30 +50,54 @@ function speak(text){
 
 	speechSynthesis.speak(speech);
 }
+function checkFront(inp, val){
+	return inp.indexOf(val) == 0;
+}
+function getData(url, data){
+	$.ajax({
+		type: "GET",
+		url: "youtube/index.php",
+		data: {
+			search : data
+		},
+		success: function(data, status, xhr) {
+			return data;
+			console.log(data) //TODO check response type, delegate to functions
+		},
+		error: function(jqXHR, status, error) {
+			console.log(error);
+		}
+	});
+}
+function show(data){
+	$('.compliment').html(data, 400);
+}
+
+function youtube(data){
+	if (checkFront(data,"play")){
+		data = data.slice(4);
+		url = "youtube/index.php";
+		show(getData(url,data));
+	}
+}
+function maps(data){
+	if (checkFront(data,"how is my commute") || checkFront(data,"how's my commute") || checkFront(data,"how bad is the traffic this morning")){
+		url = "maps/index.php"
+		show(getData(url,data));
+	}
+}
+
+
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'en-EN';
 recognition.continuous = false;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
 	if(event.results[0].isFinal==1 && event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0){
-
-	console.log(event.results[0][0].transcript);
-		$.ajax({
-			type: "GET",
-			url: "youtube/index.php",
-			data: {
-				search : event.results[0][0].transcript.slice(13)
-			},
-			success: function(data, status, xhr) {
-				$('.compliment').html(data, 400);
-				console.log(data) //TODO check response type, delegate to functions
-			},
-			error: function(jqXHR, status, error) {
-				console.log(error);
-			}
-		});
-
-
+		var data = event.results[0][0].transcript.slice(13);
+		youtube(data);
+		maps(data);
+		
 }
 }
 recognition.onend = function(){

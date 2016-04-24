@@ -65,7 +65,7 @@ function getData(url, data){
 			console.log(data) //TODO check response type, delegate to functions
 		},
 		error: function(jqXHR, status, error) {
-			console.log(error);
+			return (error);
 		}
 	});
 }

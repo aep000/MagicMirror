@@ -4,8 +4,11 @@ recognition.continuous = false;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
   if(event.results[0].isFinal==1 && event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0){
-  console.log(event.results[0][0].transcript)
-
+  retval = commands.init(event.results[0][0].transcript);
+  compliments.updateCompliment(retval);
+}
+else{
+  compliments.updateCompliment("");
 }
 }
 recognition.onend = function(){

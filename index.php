@@ -37,6 +37,28 @@
 <script src="js/news/news.js"></script>
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
 <script src="speechRecognition/js/index.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.3.0/annyang.min.js"></script>
+<script>
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    'mirror mirror on the wall whose the fairest of them all': function() {
+			compliments.updateCompliment("Snow White")
+
+    }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start();
+}
+
+
+
+</script>
 <!-- <script src="js/socket.io.min.js"></script> -->
 <?php  include(dirname(__FILE__).'/controllers/modules.php');?>
 </body>

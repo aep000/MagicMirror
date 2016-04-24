@@ -1,7 +1,5 @@
 <?php
-
     $searchString   = $_GET['search'];
-    $searchString = "can't keep my hands to myself";
     $correctString  = str_replace(" ","+",$searchString);
     $youtubeUrl = "https://www.youtube.com/results?search_query=". $correctString;
     $getHTML        = file_get_contents($youtubeUrl);
@@ -20,15 +18,4 @@
 ?>
 
 
-<!DOCTYPE HTML>
-<html>
-    <head>
-            <title>Fetch Youtube first result</title>
-    </head>
-    <body>
-            <form method="post" action="index.php" accept-charset="utf-8">
-                    Search string: <input type="text" name="searchString" />
-                    <input type="submit" name="submit" value="Search" />
-            </form>
-    </body>
-</html>
+

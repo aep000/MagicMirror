@@ -50,24 +50,36 @@ function speak(text){
 
 	speechSynthesis.speak(speech);
 }
+var recognition = new webkitSpeechRecognition();
+recognition.lang = 'en-EN';
+recognition.continuous = false;
+recognition.interimResults = true;
+recognition.onresult = function(event) {
+	if(event.results[0].isFinal==1 && event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0){
+
+	console.log(event.results[0][0].transcript);
+		$.ajax({
+			type: "GET",
+			url: "/youtube/index.php",
+			data: {
+				search : event.results[0][0].transcript.slice(13)
+			},
+			success: function(data, status, xhr) {
+				$('.compliment').html((data, 400);
+				console.log(data) //TODO check response type, delegate to functions
+			},
+			error: function(jqXHR, status, error) {
+				console.log(error);
+			}
+		});
 
 
-if (annyang) {
-  // Let's define our first command. First the text we expect, and then the function it should call
-  var commands = {
-    'hello': function() {
-			console.log("Hello");
-			$('.compliment').updateWithText("Snow White", 400);
-			speak("Snow White");
-    }
-  };
-
-  // Add our commands to annyang
-  annyang.addCommands(commands);
-
-  // Start listening. You can call this here, or attach this call to an event, button, etc.
-  annyang.start();
 }
+}
+recognition.onend = function(){
+	recognition.start();
+}
+recognition.start();
 
 
 

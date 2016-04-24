@@ -35,7 +35,6 @@
 <script src="js/time/time.js"></script>
 <script src="js/news/news.js"></script>
 <script src="js/main.js?nocache=<?php echo md5(microtime()) ?>"></script>
-<script src="speechRecognition/js/index.js"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.3.0/annyang.min.js"></script>
 <script>
@@ -57,7 +56,7 @@ if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     'mirror mirror on the wall whose the fairest of them all': function() {
-			compliments.updateCompliment("Snow White")
+			$('.compliment').updateWithText("Snow White", 400);
 			speak("Snow White")
     }
   };

@@ -17,7 +17,7 @@ var compliments = {
  */
 <<<<<<< HEAD
 compliments.updateCompliment = function (compliment) {
-=======
+/*=======
 compliments.updateCompliment = function () {
 	$.post("./backend/index.php",{
         text: "NOTHING"
@@ -32,7 +32,7 @@ compliments.updateCompliment = function () {
 					compliments.currentCompliment = data;
 				}
     });
->>>>>>> e62f45c4ad9b1143cefe502c8cf3b19bc07e5ce0
+>>>>>>> e62f45c4ad9b1143cefe502c8cf3b19bc07e5ce0 */
 
 
 

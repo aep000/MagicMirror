@@ -53,7 +53,9 @@ function speak(text){
 function checkFront(inp, val){
 	return inp.indexOf(val) == 0;
 }
-function getData(url, data){
+
+function getData(url, data,func){
+var retval = "";
 	$.ajax({
 		type: "GET",
 		url: url,
@@ -61,13 +63,15 @@ function getData(url, data){
 			search : data
 		},
 		success: function(data, status, xhr) {
-			return data;
-			console.log(data) //TODO check response type, delegate to functions
+			retval = data;
+			func(retval);
+			 //TODO check response type, delegate to functions
 		},
 		error: function(jqXHR, status, error) {
 			return (error);
 		}
 	});
+	return retval
 }
 function show(data){
 	$('.compliment').html(data, 400);
@@ -77,15 +81,19 @@ function youtube(data){
 	if (checkFront(data,"play")){
 		data = data.slice(5);
 		url = "youtube/index.php";
-		retval = getData(url,data)
-		console.log(retval);
-		show(retval);
+		var func = function(data){
+			show(data);
+		}
+		retval = getData(url,data,func);
 	}
 }
 function maps(data){
 	if (checkFront(data,"how is my commute") || checkFront(data,"how's my commute") || checkFront(data,"how bad is the traffic this morning")){
 		url = "maps/index.php"
-		show(getData(url,data));
+		func = function(data){
+			show(data);
+		}
+		show(getData(url,data,func));
 	}
 }
 

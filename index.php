@@ -95,9 +95,9 @@ recognition.interimResults = true;
 recognition.onresult = function(event) {
 	if(event.results[0].isFinal==1 && event.results[0][0].transcript.toLowerCase().indexOf("mirror mirror") == 0){
 		var data = event.results[0][0].transcript.slice(13);
+		console.log data;
 		youtube(data);
 		maps(data);
-		
 }
 }
 recognition.onend = function(){

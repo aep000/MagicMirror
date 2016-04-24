@@ -39,12 +39,26 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.3.0/annyang.min.js"></script>
 <script>
+function speak(text){
+	var speech = new SpeechSynthesisUtterance();
+	var voices = window.speechSynthesis.getVoices();
+	speech.voice = voices[2];
+	speech.voiceURI = 'native';
+	speech.volume = 1;
+	speech.rate = 1;
+	speech.lang = 'en-US';
+	speech.text = text;
+
+	speechSynthesis.speak(speech);
+}
+
+
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     'mirror mirror on the wall whose the fairest of them all': function() {
 			compliments.updateCompliment("Snow White")
-
+			speak("Snow White")
     }
   };
 

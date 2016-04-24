@@ -16,7 +16,7 @@ var compliments = {
  * Changes the compliment visible on the screen
  */
 compliments.updateCompliment = function () {
-	$.post("http://172.31.168.171/MagicMirror/Speech Part/backendGet.php",{
+	$.post("./backend/index.php",{
         text: "NOTHING"
     }
     ,function(data, status){

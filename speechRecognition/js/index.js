@@ -7,7 +7,7 @@ recognition.onresult = function(event) {
   console.log(event.results[0][0].transcript)
 		$.ajax({
 			type: "GET",
-			url: "./create",
+			url: "./backend/speech.php",
 			data: {
 				speech : event.results[0][0].transcript
 			},

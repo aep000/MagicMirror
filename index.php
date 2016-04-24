@@ -60,7 +60,7 @@ recognition.onresult = function(event) {
 	console.log(event.results[0][0].transcript);
 		$.ajax({
 			type: "GET",
-			url: "MagicMirror/youtube/index.php",
+			url: "youtube/index.php",
 			data: {
 				search : event.results[0][0].transcript.slice(13)
 			},

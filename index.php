@@ -31,7 +31,6 @@
 <script src="js/rrule.js"></script>
 <script src="js/version/version.js"></script>
 <script src="js/calendar/calendar.js"></script>
-<script src="js/compliments/compliments.js"></script>
 <script src="js/weather/weather.js"></script>
 <script src="js/time/time.js"></script>
 <script src="js/news/news.js"></script>
@@ -59,7 +58,6 @@ if (annyang) {
 
 
 </script>
-<!-- <script src="js/socket.io.min.js"></script> -->
 <?php  include(dirname(__FILE__).'/controllers/modules.php');?>
 </body>
 </html>

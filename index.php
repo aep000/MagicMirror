@@ -76,7 +76,7 @@ function show(data){
 function youtube(data){
 	if (checkFront(data,"play")){
 		console.log("youtube");
-		data = data.slice(4);
+		data = data.slice(5);
 		url = "youtube/index.php";
 		show(getData(url,data));
 	}

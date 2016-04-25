@@ -110,6 +110,43 @@ function snowWhite(data){
 }, 2000);
 	}
 }
+
+function sendIFTTT(val1,val2,val3,type,func){
+var retval = "";
+	$.ajax({
+		type: "GET",
+		url: "IFTTT/index.php",
+		data: {
+			val1 : val1,
+			val2 : val2,
+			val3 : val3,
+			type : type
+		},
+		success: function(data, status, xhr) {
+			retval = data;
+			func(retval);
+			 //TODO check response type, delegate to functions
+		},
+		error: function(jqXHR, status, error) {
+			return (error);
+		}
+	});
+	return retval
+}
+
+/*
+IAN
+sendIFTTT() should work for texting
+so val1 should be the phone number
+val2 should be the message you want to send
+type you want to set to be "text_someone"
+and val3 can be left as " "
+func is the function you want to execute on completion. so go like the following:
+func = function(data) and inside the function you can do what you want on completion of the text
+maybe do something like speak("Text sent")
+
+ */
+
 function text(data){
 	var vals = data.split(" ");
 	if(vals[0]=="text"){

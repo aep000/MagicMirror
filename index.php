@@ -96,6 +96,34 @@ function maps(data){
 		show(getData(url,data,func));
 	}
 }
+function halt(data){
+	if (data == "stop"){
+		show(" ");
+	}
+}
+function snowWhite(data){
+	if(data=="on the wall who's the fairest of them all"){
+		show("Snow White");
+		speak("Snow White");
+		setTimeout(function(){
+			halt("stop");
+}, 2000);
+	}
+}
+function text(data){
+	var vals = data.split(" ");
+	if(vals[0]=="text"){
+		var value1 = contacts[vals[1]];
+		data= data.slice(vals[0].concat(vals[1]).length()+2);
+		var value2 = data;
+		'{"value1":'+value1+',"value2":'+value2+'}'
+	}
+}
+
+var contacts = {
+	"Jake":"+19087527625",
+	"Ian":"+19083433025"
+}
 
 
 var recognition = new webkitSpeechRecognition();
@@ -108,6 +136,8 @@ recognition.onresult = function(event) {
 		console.log(data);
 		youtube(data);
 		maps(data);
+		halt(data);
+		snowWhite(data);
 }
 }
 recognition.onend = function(){

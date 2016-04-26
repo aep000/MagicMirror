@@ -150,10 +150,10 @@ maybe do something like speak("Text sent")
 function text(data){
 	var vals = data.split(" ");
 	if(vals[0]=="text"){
-		var value1 = contacts[vals[1]];
-		data= data.slice(vals[0].concat(vals[1]).length()+2);
-		var value2 = data;
-		'{"value1":'+value1+',"value2":'+value2+'}'
+		var text = data.replace("text "+vals[1]+" ","");
+		sendIFTTT(contacts[vals[1]],text,"","text_someone",function(data){
+			speak("Text Sent");
+		})
 	}
 }
 
@@ -175,6 +175,7 @@ recognition.onresult = function(event) {
 		maps(data);
 		halt(data);
 		snowWhite(data);
+		text(data);
 }
 }
 recognition.onend = function(){

@@ -136,7 +136,7 @@ var retval = "";
 
 /*
 IAN
-sendIFTTT() should work for texting
+sendIFTTT() could work for texting
 so val1 should be the phone number
 val2 should be the message you want to send
 type you want to set to be "text_someone"
